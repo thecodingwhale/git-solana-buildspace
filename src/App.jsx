@@ -21,7 +21,7 @@ const secret = new Uint8Array(arr)
 const baseAccount = web3.Keypair.fromSecretKey(secret)
 
 // This is the address of your solana program, if you forgot, just run solana address -k target/deploy/myepicproject-keypair.json
-const programID = new PublicKey('h6W5YTiih4u9QBqeYJKUvXaRAqxSBYGEawn2eL6NqYR')
+const programID = new PublicKey('8D8WDeq8dMSz8mBdP1yxEoqZeu1CfRNxtHGcvFSQwioD')
 
 // Set our network to devnet.
 const network = clusterApiUrl('devnet')
@@ -223,6 +223,7 @@ const App = () => {
           <div className="gif-grid">
             {/* We use index as the key instead, also, the src is now item.gifLink */}
             {gifList.map((item, index) => {
+              console.log('item: ', item)
               return (
                 <div className="gif-item" key={index}>
                   <img src={item.gifLink} />

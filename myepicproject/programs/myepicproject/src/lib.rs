@@ -1,7 +1,7 @@
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::{program::invoke, system_instruction::transfer};
 
-declare_id!("h6W5YTiih4u9QBqeYJKUvXaRAqxSBYGEawn2eL6NqYR");
+declare_id!("8D8WDeq8dMSz8mBdP1yxEoqZeu1CfRNxtHGcvFSQwioD");
 
 #[program]
 pub mod myepicproject {
@@ -23,6 +23,7 @@ pub mod myepicproject {
       user_address: *user.to_account_info().key,
       votes: 0,
       donated: 0,
+      total_money: 0,
     };
 		
 	// Add it to the gif_list vector.
@@ -108,6 +109,7 @@ pub struct SendSol<'info> {
 pub struct ItemStruct {
     pub votes: u32,
     pub donated: u64,
+    pub total_money: u64,
     pub gif_link: String,
     pub user_address: Pubkey,
 }
